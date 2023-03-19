@@ -31,6 +31,7 @@ public class Book {
     }
     public boolean equals(Object other) {
         if(this == other) return true;
+        if (this.getClass() != other.getClass())return false;
         Book thisBook = (Book) other;
         return publishingYear == thisBook.publishingYear && Objects.equals(bookName, thisBook.bookName) && Objects.equals(authorName, thisBook.authorName);
     }

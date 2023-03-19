@@ -28,6 +28,7 @@ public class Author {
 
     public boolean equals(Object otherAuthor) {
         if (this == otherAuthor) return true;
+        if (this.getClass() != otherAuthor.getClass())return false;
         Author thisAuyhor = (Author) otherAuthor;
         return name == thisAuyhor.name && Objects.equals(surname, thisAuyhor.surname);
     }
