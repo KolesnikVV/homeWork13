@@ -1,7 +1,6 @@
-package book;
+package hw13lesson2;
 
-import book.Author;
-
+import java.util.Objects;
 public class Book {
    private String bookName;
     private Author authorName;
@@ -24,5 +23,17 @@ public class Book {
     public void setPublishingYear(int publishingYear){
         this.publishingYear = publishingYear;
     }
+    public String toString() {
+        return "название " + this.bookName + " автор " + this.authorName + " год публикации " + this.publishingYear;
+    }
+    public int hashCode() {
+        return java.util.Objects.hash(bookName, publishingYear, authorName);
+    }
+    public boolean equals(Object other) {
+        if(this == other) return true;
+        Book thisBook = (Book) other;
+        return publishingYear == thisBook.publishingYear && Objects.equals(bookName, thisBook.bookName) && Objects.equals(authorName, thisBook.authorName);
+    }
+
 }
 
